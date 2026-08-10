@@ -1,0 +1,166 @@
+// Bubble sort(Ascending)
+import java.util.*;
+class Main {
+    public static void bubblesort(int[] arr){
+        int n=arr.length;
+        for(int i=0;i<n-1;i++){
+            for(int j=0;j<n-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={5,3,8,4,2};
+        bubblesort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+// Bubble sort(descending)
+import java.util.*;
+class Main {
+    public static void bubblesort(int[] arr){
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=0;j<arr.length-i-1;j++){
+                if(arr[j]<arr[j+1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={5,3,8,4,2};
+        bubblesort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+// Selection Sort
+import java.util.*;
+class Main {
+    public static void selectionsort(int[] arr){
+        for(int i=0;i<arr.length-1;i++){
+            int min=i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j]<arr[min]){
+                    min=j;
+                }
+            }
+            int temp=arr[i];
+            arr[i]=arr[min];
+            arr[min]=temp;
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={5,3,8,4,2};
+        selectionsort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+// Find kth smallest element using selection sort
+import java.util.*;
+class Main {
+    public static void selectionsort(int[] arr){
+        for(int i=0;i<arr.length-1;i++){
+            int min=i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j]<arr[min]){
+                    min=j;
+                }
+            }
+            int temp=arr[i];
+            arr[i]=arr[min];
+            arr[min]=temp;
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={9,4,7,1,5,2};
+        int k=3;
+        selectionsort(arr);
+        System.out.println("Sorted Array: "+Arrays.toString(arr));
+        System.out.println(k+" smallest element: "+arr[k-1]);
+    }
+}
+
+//Merge Sort
+class Main {
+    public static void mergesort(int[] arr, int low, int high){
+        if(low>=high){
+            return;
+        }
+        int mid=low+(high-low)/2;
+        mergesort(arr,low, mid);
+        mergesort(arr, mid+1, high);
+        merge(arr, low, mid, high);
+    }
+    static void merge(int[] arr, int low, int mid, int high){
+        int[] temp=new int[high-low+1];
+        int left=low;
+        int right=mid+1;
+        int k=0;
+        while(left<=mid && right<=high){
+            if(arr[left]<=arr[right]){
+                temp[k++]=arr[left++];
+            }else{
+                temp[k++]=arr[right++];
+            }
+        }
+        while(left<=mid){
+            temp[k++]=arr[left++];
+        }
+        while(right<=high){
+            temp[k++]=arr[right++];
+        }
+        for(int i=low;i<=high;i++){
+            arr[i]=temp[i-low];
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={10,4,6,1,11,3,2,8};
+        mergesort(arr,0,arr.length-1);
+        for(int num:arr){
+            System.out.print(num+" ");
+        }
+    }
+}
+
+//Quick Sort
+class Main {
+    static void quicksort(int[] arr, int low, int high){
+        if(low<high){
+            int pivotIndex=partition(arr,low, high);
+            quicksort(arr, low, pivotIndex-1);
+            quicksort(arr,pivotIndex+1, high);
+        }
+    }
+    static int partition(int[] arr, int low, int high){
+        int pivot=arr[high];
+        int i=low-1;
+        for(int j=low;j<high;j++){
+            if(arr[j]<pivot){
+                i++;
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+        int temp=arr[i+1];
+        arr[i+1]=arr[high];
+        arr[high]=temp;
+        return i+1;
+    }
+    public static void main(String[] args) {
+        int[] arr={7,2,9,1,5,8,3};
+        quicksort(arr,0, arr.length-1);
+        for(int x:arr){
+            System.out.print(x+" ");
+        }
+    }
+}

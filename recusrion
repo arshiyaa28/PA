@@ -1,0 +1,92 @@
+//All subsets
+import java.util.*;
+class Main {
+    static List<List<Integer>>ans=new ArrayList<>();
+        static void solve(int[] nums, int index, List<Integer>current){
+        if(index==nums.length){
+            ans.add(new ArrayList<>(current));
+            return;
+        }
+        current.add(nums[index]);
+        solve(nums,index+1, current);
+        current.remove(current.size()-1);
+        solve(nums, index+1, current);
+    }
+    public static void main(String[] args) {
+        int[] nums={1,2,3};
+        solve(nums, 0, new ArrayList<>());
+        System.out.println(ans);
+    }
+}
+
+//Leetcode 70
+import java.util.*;
+class Main {
+    public static int climb(int n){
+        if(n==1) return 1;
+        if(n==2) return 2;
+        int first=1;
+        int second=2;
+        for(int i=3;i<=n;i++){
+            int current=first+second;
+            first=second;
+            second=current;
+        }
+        return second;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of stairs: ");
+        int n=sc.nextInt();
+        System.out.println("Total ways: "+climb(n));
+        sc.close();
+    }
+}
+
+class Main {
+    public static int smallestsubarray(int[] arr,int k){
+        int left=0;
+        int sum=0;
+        int minlength=Integer.MAX_VALUE;
+        for(int right=0;right<arr.length;right++){
+            sum+=arr[right];
+            while(sum>=k){
+                minlength=Math.min(minlength, right-left+1);
+                sum-=arr[left];
+                left++;
+            }
+        }
+        if(minlength==Integer.MAX_VALUE) return 0;
+        return minlength;
+    }
+    public static void main(String[] args) {
+        int[] arr={2,3,1,2,4,3};
+        System.out.print(smallestsubarray(arr, 7));
+    }
+}
+
+
+import java.util.*;
+
+class Main {
+    public static int CountSubArray(int[] arr, int k) {
+        int left = 0;
+        int sum = 0;
+        int count=0;
+        for (int right = 0; right < arr.length; right++) {
+            sum += arr[right];
+            while (sum > k) {
+                sum -= arr[left];
+                left++;
+            }
+            count+=(right-left+1);
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 1};
+        int k = 3;
+        System.out.println(CountSubArray(arr, k));
+    }
+}
