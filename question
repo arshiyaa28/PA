@@ -1,0 +1,640 @@
+//1 
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter first number: ");
+        int a=sc.nextInt();
+        System.out.println("Enter second number: ");
+        int b=sc.nextInt();
+        System.out.println("Addition: "+(a+b));
+        System.out.println("Subtraction: "+(a-b));
+        System.out.println("Multiplication: "+(a*b));
+        System.out.println("Division: "+(a/b));
+    }
+}
+
+//2
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter number 1: ");
+        int a=sc.nextInt();
+        System.out.println("Enter number 2: ");
+        int b=sc.nextInt();
+        a=a+b;
+        b=a-b;
+        a=a-b;
+        System.out.print(a+" "+b);
+    }
+}
+
+//3
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n>0) System.out.println("Postive");
+        else if(n<0) System.out.println("Negative");
+        else(n==0) System.out.println("Zero");
+        
+        if(n%2==0) System.out.println("Even");
+        else System.out.println("Odd");
+    }
+}
+
+//4
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        int n3=sc.nextInt();
+        int n4=sc.nextInt();
+        int n5=sc.nextInt();
+        int sum=n1+n2+n3+n4+n5;
+        int average=sum/5;
+        int percentage=average*100;
+        System.out.println(sum+"  "+average+"  "+percentage);
+    }
+}
+
+//5
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        if (a>b && a>c){
+            System.out.println(a);
+        }else if(b>a && b>c){
+            System.out.println(b);
+        }else{
+            System.out.println(c);
+        }
+    }
+}
+
+//6
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n<=100) System.out.println(n*5);
+        else if (n>100 && n<200) System.out.println(n*7);
+        else System.out.println(n*10);
+    }
+}
+
+//7
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if (year % 400 == 0)
+            System.out.println(year + " is a Leap Year");
+        else if (year % 100 == 0)
+            System.out.println(year + " is not a Leap Year");
+        else if (year % 4 == 0)
+            System.out.println(year + " is a Leap Year");
+        else
+            System.out.println(year + " is not a Leap Year");
+    }
+}
+
+//8
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        if(n>90) System.out.println("A+");
+        else if (n>=80 && n<=89) System.out.println("A");
+        else if (n>=70 && n<=79) System.out.println("B");
+        else if (n>=60 && n<=69) System.out.println("C");
+        else System.out.println("Fail");
+    }
+}
+
+//9
+class Main {
+    public static void main(String[] args) {
+        for(int i=1;i<=100;i++){
+            if(i%2==0){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+
+//10
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int fact=1;
+        for(int i=0;i<=n;i++){
+            fact=fact*i;
+        }
+        System.out.print(fact);
+    }
+}
+
+//11
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc,nextInt();
+        int rev=0;
+        while(n!=0){
+            int digit=n%10;
+            int rev=n*10+digit;
+            n/=10;
+        }
+        System.out.println(rev);
+    }
+}
+
+//12
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc,nextInt();
+        int rev=0;
+        while(n!=0){
+            int digit=n%10;
+            int rev=n*10+digit;
+            n/=10;
+        }
+        if(n==rev) System.out.println("Palindrome");
+        else System.out.println("Not a palindrome");
+    }
+}
+
+//13
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int first=0;
+        int second=1;
+        for(int i=1;i<=n;i++){
+            System.out.println(a+" ");
+            int curr=first+second;
+            first=second;
+            second=curr;
+        }
+    }
+}
+
+//14
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int sum=0;
+        while(n>0){
+            sum+=n%10;
+            n/=10;
+        }
+        System.out.print(sum);
+    }
+}
+
+//15
+import java.util.*;
+class Student{
+    int id;
+    String name;
+    String course;
+    int marks;
+    
+    void inputDetails(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter ID: ");
+        int id=sc.nextInt();
+        sc.nextLine();
+        
+        System.out.println("Enter Name: ");
+        name=sc.nextLine();
+        
+        System.out.println("Enter Course: ");
+        course=sc.nextLine();
+        
+        System.out.println("Enter Marks: ");
+        marks=sc.nextInt();
+    }
+    void displayDetails(){
+        System.out.println("\n--- Student Details ---");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Course: " + course);
+        System.out.println("Marks: " + marks);
+        System.out.println("Grade: " + calculateGrade());
+    }
+    char calculateGrade(){
+        if (marks >= 90)
+            return 'A';
+        else if (marks >= 80)
+            return 'B';
+        else if (marks >= 70)
+            return 'C';
+        else if (marks >= 60)
+            return 'D';
+        else if (marks >= 50)
+            return 'E';
+        else
+            return 'F';
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Student s=new Student();
+        s.inputDetails();
+        s.displayDetails();
+    }
+}
+
+//16
+import java.util.Scanner;
+class BankAccount {
+    int accountNumber;
+    String accountHolderName;
+    double balance;
+
+    void deposit(double amount) {
+        balance+=amount;
+        System.out.println("Amount deposited");
+    }
+    void withdraw(double amount) {
+        if(amount <= balance){
+            balance-=amount;
+            System.out.println("Amount withdrawn");
+        }else{
+            System.out.println("Insufficient balance.");
+        }
+    }
+    void checkBalance() {
+        System.out.println(balance);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BankAccount b = new BankAccount();
+        System.out.print("Enter Account Number: ");
+        b.accountNumber = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Account Holder Name: ");
+        b.accountHolderName = sc.nextLine();
+        System.out.print("Enter Initial Balance: ");
+        b.balance = sc.nextDouble();
+        System.out.print("Enter amount to deposit: ");
+        double depositAmount = sc.nextDouble();
+        b.deposit(depositAmount);
+        System.out.print("Enter amount to withdraw: ");
+        double withdrawAmount = sc.nextDouble();
+        b.withdraw(withdrawAmount);
+        b.checkBalance();
+    }
+}
+
+//17
+import java.util.Scanner;
+class Employee {
+    int id;
+    String name;
+    double basicSalary;
+    double calculateHRA() {
+        return basicSalary * 0.20;
+    }
+    double calculateDA() {
+        return basicSalary * 0.10;
+    }
+    double calculateGrossSalary() {
+        return basicSalary + calculateHRA() + calculateDA();
+    }
+    void displayDetails() {
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Basic Salary: " + basicSalary);
+        System.out.println("HRA: " + calculateHRA());
+        System.out.println("DA: " + calculateDA());
+        System.out.println("Gross Salary: " + calculateGrossSalary());
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Employee e = new Employee();
+        System.out.print("Enter ID: ");
+        e.id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Name: ");
+        e.name = sc.nextLine();
+        System.out.print("Enter Basic Salary: ");
+        e.basicSalary = sc.nextDouble();
+        System.out.println("\n--- Employee Salary Details ---");
+        e.displayDetails();
+    }
+}
+
+// 18
+import java.util.Scanner;
+class Person {
+    String name;
+    int age;
+    void inputPersonDetails() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Name: ");
+        name = sc.nextLine();
+        System.out.print("Enter Age: ");
+        age = sc.nextInt();
+    }
+}
+class Student extends Person {
+    int rollNumber;
+    String course;
+    void inputStudentDetails() {
+        Scanner sc = new Scanner(System.in);
+        inputPersonDetails();
+        System.out.print("Enter Roll Number: ");
+        rollNumber = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Course: ");
+        course = sc.nextLine();
+    }
+    void displayDetails() {
+        System.out.println("\n--- Student Details ---");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Course: " + course);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.inputStudentDetails();
+        s.displayDetails();
+    }
+}
+
+//19
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter first integer: ");
+            int a = sc.nextInt();
+            System.out.print("Enter second integer: ");
+            int b = sc.nextInt();
+            int result = a / b;
+            System.out.println("Result: " + result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Enter integers only");
+        }
+    }
+}
+
+//20
+import java.util.Scanner;
+class InsufficientBalanceException extends Exception {
+    InsufficientBalanceException(String message) {
+        super(message);
+    }
+}
+class ATM {
+    double balance;
+    ATM(double balance) {
+        this.balance = balance;
+    }
+    void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount > balance) {
+            throw new InsufficientBalanceException(
+                "Insufficient balance!"
+            );
+        }
+        balance = balance - amount;
+        System.out.println("Withdrawal successful.");
+        System.out.println("Remaining Balance: " + balance);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ATM atm = new ATM(5000);
+        System.out.print("Enter withdrawal amount: ");
+        double amount = sc.nextDouble();
+        try {
+            atm.withdraw(amount);
+        }
+        catch (InsufficientBalanceException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
+//21
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        int vowels = 0;
+        int consonants = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = Character.toLowerCase(str.charAt(i));
+            if (ch >= 'a' && ch <= 'z') {
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+    }
+}
+
+//22
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int ori=n;
+        int temp=n;
+        int digits=0;
+        int sum=0;
+        while(temp>0){
+            digits++;
+            temp/=10;
+        }
+        temp=n;
+        while(temp>0){
+            int digits=temp%10;
+            sum=sum+(int)Math.pow(digits, digits);
+            temp/=10;
+        }
+        if(sum==ori) System.out.println("Armstrong number");
+        else System.out.println("Not a Armstrong Number");
+    }
+}
+
+//23
+class Main {
+    public static void main(String[] args) {
+        for(int i=1;i<=4;i++){
+            if(i%2==1) System.out.println("*");
+        }else{
+            System.out.println("**");
+        }
+    }
+}
+
+//24
+class Main {
+    public static void main(String[] args) {
+        int num = 1;
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+//25
+import java.util.Scanner;
+class Book {
+    int id;
+    String title;
+    String author;
+    boolean available;
+    Book(int id, String title, String author) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.available = true;
+    }
+    void displayBook() {
+        System.out.println("ID: " + id +", Title: " + title +", Author: "+author);
+    }
+}
+public class Main {
+    static Book[] books = new Book[100];
+    static int count = 0;
+    static void addBook(Scanner sc) {
+        System.out.print("Enter Book ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Book Title: ");
+        String title = sc.nextLine();
+        System.out.print("Enter Author Name: ");
+        String author = sc.nextLine();
+        books[count] = new Book(id, title, author);
+        count++;
+        System.out.println("Book added successfully.");
+    }
+    static void issueBook(Scanner sc) {
+        System.out.print("Enter Book ID to issue: ");
+        int id = sc.nextInt();
+        for (int i = 0; i < count; i++) {
+            if (books[i].id == id) {
+                if (books[i].available) {
+                    books[i].available = false;
+                    System.out.println("Book issued successfully.");
+                } else {
+                    System.out.println("Book is already issued.");
+                }
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+    static void returnBook(Scanner sc) {
+        System.out.print("Enter Book ID to return: ");
+        int id = sc.nextInt();
+        for (int i = 0; i < count; i++) {
+            if (books[i].id == id) {
+                if (!books[i].available) {
+                    books[i].available = true;
+                    System.out.println("Book returned successfully.");
+                } else {
+                    System.out.println("Book was not issued.");
+                }
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+    static void displayAvailableBooks() {
+        System.out.println("\n--- Available Books ---");
+        boolean found = false;
+        for (int i = 0; i < count; i++) {
+            if (books[i].available) {
+                books[i].displayBook();
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No books are currently available.");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("\n===== Library Management System =====");
+            System.out.println("1. Add Book");
+            System.out.println("2. Issue Book");
+            System.out.println("3. Return Book");
+            System.out.println("4. Display Available Books");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    addBook(sc);
+                    break;
+                case 2:
+                    issueBook(sc);
+                    break;
+                case 3:
+                    returnBook(sc);
+                    break;
+                case 4:
+                    displayAvailableBooks();
+                    break;
+                case 5:
+                    System.out.println("Thank you!");
+                    break;
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        } while (choice != 5);
+    }
+}
+
