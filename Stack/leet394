@@ -1,0 +1,33 @@
+// Important
+class Solution {
+    public String decodeString(String s) {
+        Stack<Integer> cstack = new Stack<>();
+        Stack<String> sstack = new Stack<>();
+        String cstring = "";
+        int cnumber = 0;
+        for (char ch : s.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                cnumber = cnumber * 10 + (ch - '0');
+            }
+            else if (ch == '[') {
+                cstack.push(cnumber);
+                sstack.push(cstring);
+                cnumber = 0;
+                cstring = "";
+            }
+            else if (ch == ']') {
+                int c = cstack.pop();
+                String pstring = sstack.pop();
+                StringBuilder temp = new StringBuilder();
+                for (int i = 0; i < c; i++) {
+                    temp.append(cstring);
+                }
+                cstring = pstring + temp.toString();
+            }
+            else {
+                cstring += ch;
+            }
+        }
+        return cstring;
+    }
+}
