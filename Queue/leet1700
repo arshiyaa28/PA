@@ -1,0 +1,24 @@
+class Solution {
+    public int countStudents(int[] students, int[] sandwiches) {
+        Queue<Integer> s = new LinkedList<>(); 
+        for (int student : students){
+            s.add(student); 
+        }
+        int sandwichIndex = 0;
+        int rejectedCount = 0;
+        
+        while(!s.isEmpty() && rejectedCount < s.size()) {
+            if (s.peek() == sandwiches[sandwichIndex]) {
+                s.poll();
+                sandwichIndex++;
+                rejectedCount = 0; // reset since a student got fed
+            } else {
+                int student = s.poll();
+                s.add(student);
+                rejectedCount++;
+            }
+        }
+        
+        return s.size();
+    }
+}
